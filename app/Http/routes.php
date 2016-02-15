@@ -15,6 +15,31 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('hello/{name}', function ($name) {
+    echo "Hello ". $name . "!!!";
+});
+
+Route::get('test', function () {
+	echo '<form action="test" method="POST">';
+	echo '<input type="submit" value="submit">';
+	echo '<input type="hidden" name="_token" value="' . csrf_token()  .    '">';
+	echo '<input type="hidden" name="_method" value="PUT">';
+	echo '</form>';
+});
+
+Route::post('test', function () {
+    echo "post.";
+});
+
+Route::put('test', function () {
+    echo "put.";
+});
+
+Route::delete('test', function () {
+    echo "delete.";
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
